@@ -11,7 +11,7 @@ class Music{
 		this.random = -1;
 	}
 
-	load(){
+	load(img){
 		for(var i=0; i<(this.nbMusic); i++){
 			this.arrayMusic.push(loadSound(this.arrayPath[i]));
 		}

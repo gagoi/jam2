@@ -1,7 +1,7 @@
 var timer;
 var run = true;
 var music = new Music("resources/sounds/musics/", 3);
-var sound = new Sound("resources/chapters/0/");
+var sound = new Sound("resources/chapters/");
 
 function preload(){
 	music.load();
@@ -21,10 +21,8 @@ function setup() {
 
 function draw() {
 	clear();
-	music.volume(0.4);
+	music.volume(0.0);
 	music.play();
-	sound.volume(0.7);
-	sound.play(0);
 	//background(253, 108, 158);
 	//rect(player.getxPos(), player.getyPos(), 100, 100);
 	if(run)
@@ -39,4 +37,9 @@ function mousePressed() {
 	run = !run;
 	run ? timer.start() : timer.stop();
 	print(run);
+}
+
+function selectLevel(chapter, level){
+	sound.volume(1);
+	sound.play(0, 8);
 }
