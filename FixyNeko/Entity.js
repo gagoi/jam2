@@ -1,7 +1,7 @@
 class Entity {
-	constructor(string texturePath){
+	constructor(texturePath){
 		this.textureName = texturePath.replace(/[^\/]*$/, "");
-		this.path = texturePath.replace(textureName, "");
+		this.path = texturePath.replace(this.textureName, "");
 
 		this.xVel = 0;
 		this.yVel = 0;
@@ -13,48 +13,48 @@ class Entity {
 		this.applyGravity = false;
 	}
 
-	void update() {
+	update() {
 		this.xVel += this.xAcc;
 		this.yVel += this.yAcc;
 		this.xPos += this.xVel;
 		this.yPos += this.yVel;
 	}
 
-	void setxAcc(val){
+	setxAcc(val){
 		this.xAcc = val;
 	}
-	void setyAcc(val){
+	setyAcc(val){
 		this.yAcc = val;
 	}
-	void setxVel(val){
+	setxVel(val){
 		this.xVel = val;
 	}
-	void setyVel(val){
+	setyVel(val){
 		this.yVel = val;
 	}
-	void setxPos(val){
+	setxPos(val){
 		this.xPos = val;
 	}
-	void setyPos(val){
+	setyPos(val){
 		this.yPos = val;
 	}
 
-	float getxAcc(){
+	getxAcc(){
 		return(this.xAcc);
 	}
-	float getyAcc(){
+	getyAcc(){
 		return(this.yAcc);
 	}
-	float getxVel(){
+	getxVel(){
 		return(this.xVel);
 	}
-	float getyVel(){
+	getyVel(){
 		return(this.yVel);
 	}
-	float getxPos(){
+	getxPos(){
 		return(this.xPos);
 	}
-	float getyPos(){
+	getyPos(){
 		return(this.yPos);
 	}
 }

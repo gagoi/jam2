@@ -1,5 +1,5 @@
 class Item {
 	constructor (texturePath) {
-		Entity.call(texturePath);
+		Entity.call(this, texturePath);
 	}
 }
