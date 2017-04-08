@@ -12,13 +12,9 @@ class Music{
 	}
 
 	load(){
-		color(255, 0, 0);
-		text("TEST", 50, 50);
-		/*
 		for(var i=0; i<(this.nbMusic); i++){
 			this.arrayMusic.push(loadSound(this.arrayPath[i]));
 		}
-		*/
 	}
 
 	volume(newVolume){
@@ -28,18 +24,23 @@ class Music{
 	}
 
 	playMusic(){
-		alert("test");
 		var rand;
 		do {
-			rand = Math.random() * this.arrayMusic.length();
+			rand = Math.floor(Math.random() * this.nbMusic);
 		} while(rand==this.random);
 		this.random = rand;
 		this.arrayMusic[this.random].play();
 	}
 
 	play(){
-		if (!isPlaying()){
-			playMusic();
+		var isArrayIsPlaying = false;
+		for (var i=0; i<this.nbMusic; i++){
+			if (this.arrayMusic[i].isPlaying()){
+				isArrayIsPlaying = true;
+			}
+		}
+		if (!isArrayIsPlaying){
+			this.playMusic();
 		}
 	}
 }
