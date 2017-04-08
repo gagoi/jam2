@@ -1,0 +1,3 @@
+Billy arrête !
+Tu pars dans le mauvais sens sale con...
+<tip=Appuie sur la flèche de gauche pour reculer.>
