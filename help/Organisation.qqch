@@ -1,0 +1,28 @@
+Sketch
+	Game
+		Entity
+			Player
+				x[]
+				y[]
+			Item
+				x
+				y
+			textureName
+			applyGravity()
+		Chapter
+			Level
+			Texture
+			Sound
+		TextureLoader
+			texturesMap
+			getTexture(name)
+		Timer
+			start()
+			stop()
+			reset()
+			getTime()
+			setTime()
+			addTime(millisTime)
+		update()
+		render()
+		selectLevel(chapterID, levelID)
