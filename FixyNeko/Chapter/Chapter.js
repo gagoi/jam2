@@ -2,9 +2,9 @@ var level = [[]];
 var xBegin, yBegin;
 var xEnd, yEnd;
 
-function loadLevel(lvl){
+function loadLevel(chap, lvl){
 	var levelText, rawFile = new XMLHttpRequest();
-	rawFile.open("GET", "resources/chapters/0/" + lvl + ".lvl", false);
+	rawFile.open("GET", "resources/chapters/" + chap + "/lvl_" + lvl + ".lvl", false);
 	rawFile.onreadystatechange = function () {
         if (rawFile.readyState === 4) {
             if(rawFile.status === 200 || rawFile.status == 0) {
