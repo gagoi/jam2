@@ -1,7 +1,7 @@
 class Sound{
-	constructor(){
+	constructor(path){
 		this.nbSound = 1;
-		this.path = "resources/chapters/0/";
+		this.path = path;
 		this.pathArray = new Array();
 
 		for (var i=0; i<this.nbSound; i++){
@@ -24,6 +24,8 @@ class Sound{
 	}
 
 	play(nlvl){
-		this.soundArray[nlvl].play();
+		if (!this.soundArray[nlvl].isPlaying()){
+			this.soundArray[nlvl].play();
+		}
 	}
 }
