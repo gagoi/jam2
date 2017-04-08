@@ -1,4 +1,5 @@
 var timer;
+var run = true;
 
 function setup() {
 	createCanvas(5000, 5000);
@@ -11,14 +12,16 @@ function setup() {
 
 function draw() {
 	clear();
-	text(timer.getDraw(), 20, 20);
 	rect(player.getxPos(), player.getyPos(), 100, 100);
 	player.update();
 	if(player.getyPos() >= 1000)
 		player.setyPos(0);
+
+	text(timer.getDraw(), 20, 20);
 }
 
 function mousePressed() {
-	timer.stop();
-	print("Yolo");
+	run = !run;
+	run ? timer.start() : timer.stop();
+	print(run);
 }
