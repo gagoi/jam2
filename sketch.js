@@ -12,8 +12,10 @@ function setup() {
 
 function draw() {
 	clear();
+	background(253, 108, 158);
 	rect(player.getxPos(), player.getyPos(), 100, 100);
-	player.update();
+	if(run)
+		player.update();
 	if(player.getyPos() >= 1000)
 		player.setyPos(0);
 
