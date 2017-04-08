@@ -6,15 +6,16 @@ function setup() {
 	timer.start();
 	player = new Player("sgfkehkgf", 10);
 	player.initPos(20,0);
-	player.setyAcc(0.05);
+	player.setyAcc(1);
 }
 
 function draw() {
 	clear();
 	text(timer.getDraw(), 20, 20);
 	rect(player.getxPos(), player.getyPos(), 100, 100);
-	print(player.getxVel(), player.getyVel());
 	player.update();
+	if(player.getyPos() >= 1000)
+		player.setyPos(0);
 }
 
 function mousePressed() {

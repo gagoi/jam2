@@ -1,5 +1,5 @@
-class Item {
-	constructor (texturePath) {
-		Entity.call(this, texturePath);
+class Item extends Entity{
+	constructor(texturePath) {
+		super(texturePath);
 	}
 }
