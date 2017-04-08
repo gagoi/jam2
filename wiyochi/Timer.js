@@ -1,20 +1,23 @@
 class Timer {
     constructor(){
-        this.date = new Date();
         this.reset();
     }
 
     reset(){
+		this.date = new Date()
         this.time = this.date.getTime();
 		this.run = false;
+		this.pause = this.date.getTime();
     }
 
     start(){
-        this.time = this.date.getTime();
+        this.time = this.pause;
 		this.run = true;
     }
 
 	stop(){
+		this.date = new Date()
+		this.pause = this.date.getTime();
 		this.run = false;
 	}
 
@@ -25,12 +28,12 @@ class Timer {
 			return(tmp);
 		}
 		else {
-			return(this.time);
+			return(this.pause-this.time);
 		}
 	}
 
 	add(addTime){
-		this.time += addTime;
+		this.time -= addTime;
 	}
 
 	getDraw(){
