@@ -2,10 +2,20 @@ var level = [[]];
 var xBegin, yBegin;
 var xEnd, yEnd;
 
-function loadLevel(){
+function loadLevel(lvl){
+	var levelText;
     var rawFile = new XMLHttpRequest();
-	rawFile.open("GET", "./test.txt", false);
-	print("text:", rawFile, ":text");
+	rawFile.open("GET", "resources/chapters/0/"+lvl+".lvl", false);
+	rawFile.onreadystatechange = function () {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                levelText = rawFile.responseText;
+            }
+		}
+	}
+	rawFile.send(null);
 }
 
 function readTextFile(file)
@@ -19,7 +29,7 @@ function readTextFile(file)
             if(rawFile.status === 200 || rawFile.status == 0)
             {
                 var allText = rawFile.responseText;
-                fileDisplayArea.innerText = allText
+                fileDisplayArea.innerText = allText;
             }
         }
     }
