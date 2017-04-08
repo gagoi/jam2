@@ -6,7 +6,7 @@ function setup() {
 	timer = new Timer();
 	timer.start();
 	player = new Player("sgfkehkgf", 10);
-	player.initPos(20,0);
+	player.initPos(20,500);
 	player.setyAcc(1);
 }
 
@@ -16,8 +16,8 @@ function draw() {
 	rect(player.getxPos(), player.getyPos(), 100, 100);
 	if(run)
 		player.update();
-	if(player.getyPos() >= 1000)
-		player.setyPos(0);
+	if(player.getyPos() >= 500)
+		player.setyVel(-30);
 
 	text(timer.getDraw(), 20, 20);
 }
