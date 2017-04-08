@@ -7,17 +7,18 @@ class Timer {
 		this.date = new Date()
         this.time = this.date.getTime();
 		this.run = false;
-		this.pause = this.date.getTime();
+		this.pause = 0;
     }
 
     start(){
-        this.time = this.pause;
+		this.date = new Date();
+        this.time = this.date.getTime()-this.pause;
 		this.run = true;
     }
 
 	stop(){
-		this.date = new Date()
-		this.pause = this.date.getTime();
+		this.date = new Date();
+		this.pause = this.date.getTime()-this.time;
 		this.run = false;
 	}
 
@@ -28,7 +29,7 @@ class Timer {
 			return(tmp);
 		}
 		else {
-			return(this.pause-this.time);
+			return(this.pause);
 		}
 	}
 
