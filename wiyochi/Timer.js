@@ -50,13 +50,13 @@ class Timer {
 			msec = String(msec)
 		}
 		if(sec<10){
-			msec = "0"+String(sec);
+			sec = "0"+String(sec);
 		}
 		else {
 			sec = String(sec)
 		}
 		if(min<10){
-			msec = "0"+String(min);
+			min = "0"+String(min);
 		}
 		else {
 			min = String(min)
