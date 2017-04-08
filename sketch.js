@@ -1,14 +1,17 @@
 var timer;
 var run = true;
-var music = new Music("resources/sounds/musics/", 3);
+//var music = new Music("resources/sounds/musics", 3);
 
 function preload(){
-	music.load()
+	mySound = loadSound('resources/sounds/musics/song0.mp3');
 }
 
 function setup() {
-	music.volume(0.1);
-	createCanvas(5000, 5000);
+	print("setup");
+	mySound.setVolume(1);
+	mySound.play();
+	//music.volume(0.1);
+	createCanvas(2000, 1000);
 	timer = new Timer();
 	timer.start();
 	player = new Player("sgfkehkgf", 10);
@@ -18,16 +21,17 @@ function setup() {
 }
 
 function draw() {
-	clear();
-	music.play();
-	background(253, 108, 158);
-	rect(player.getxPos(), player.getyPos(), 100, 100);
+	//clear();
+	//music.load();
+	//music.play();
+	//background(253, 108, 158);
+	//rect(player.getxPos(), player.getyPos(), 100, 100);
 	if(run)
 		player.update();
 	if(player.getyPos() >= 500)
 		player.setyVel(-30);
 
-	text(timer.getDraw(), 20, 20);
+	//text(timer.getDraw(), 20, 20);
 }
 
 function mousePressed() {
