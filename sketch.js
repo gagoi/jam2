@@ -8,7 +8,7 @@ function setup() {
 	player = new Player("sgfkehkgf", 10);
 	player.initPos(20,500);
 	player.setyAcc(1);
-	loadLevel();
+	loadLevel("lvl_0");
 }
 
 function draw() {
