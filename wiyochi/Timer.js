@@ -7,18 +7,18 @@ class Timer {
 		this.date = new Date()
         this.time = this.date.getTime();
 		this.run = false;
-		this.pause = 0;
+		this.currentTime = 0;
     }
 
     start(){
 		this.date = new Date();
-        this.time = this.date.getTime()-this.pause;
+        this.time = this.date.getTime()-this.currentTime;
 		this.run = true;
     }
 
 	stop(){
 		this.date = new Date();
-		this.pause = this.date.getTime()-this.time;
+		this.currentTime = this.date.getTime()-this.time;
 		this.run = false;
 	}
 
@@ -29,7 +29,7 @@ class Timer {
 			return(tmp);
 		}
 		else {
-			return(this.pause);
+			return(this.currentTime);
 		}
 	}
 
@@ -43,7 +43,26 @@ class Timer {
 		var sec = Math.floor((tmp/1000)%60);
 		var min = Math.floor(((tmp/1000)/60)%60);
 
-		return(String(min) + " : " + String(sec) + " : " + String(msec));
+		if(msec<10){
+			msec = "0"+String(msec);
+		}
+		else {
+			msec = String(msec)
+		}
+		if(sec<10){
+			msec = "0"+String(sec);
+		}
+		else {
+			sec = String(sec)
+		}
+		if(min<10){
+			msec = "0"+String(min);
+		}
+		else {
+			min = String(min)
+		}
+
+		return(min + " : " + sec + " : " + msec);
 	}
 
 }
