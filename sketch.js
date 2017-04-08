@@ -1,7 +1,16 @@
-function setup() {
+var timer;
 
+function setup() {
+	timer = new Timer();
+	timer.start();
 }
 
 function draw() {
-    rect(10, 10, 50, 40);
+	clear();
+	text(timer.getDraw(), 20, 20);
+}
+
+function mousePressed() {
+	timer.stop();
+	print("Yolo");
 }
