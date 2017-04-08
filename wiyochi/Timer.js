@@ -1,7 +1,6 @@
 class Timer {
     constructor(){
         this.date = new Date();
-		this.run = false;
         this.reset();
     }
 
@@ -16,14 +15,14 @@ class Timer {
     }
 
 	stop(){
-        this.time = this.date.getTime();
 		this.run = false;
 	}
 
 	getTime(){
+		this.date = new Date();
 		if (this.run) {
-			this.time = this.date.getTime()-this.time;
-			return(this.time);
+			var tmp = this.date.getTime()-this.time;
+			return(tmp);
 		}
 		else {
 			return(this.time);
@@ -35,37 +34,12 @@ class Timer {
 	}
 
 	getDraw(){
-		this.time = this.getTime();
-		var msec = this.time%1000;
-		var sec = Math.floor((this.time/1000)%60);
-		var min = Math.floor(((this.time/1000)/60)%60);
+		var tmp = this.getTime();
+		var msec = Math.floor((tmp%1000)/10);
+		var sec = Math.floor((tmp/1000)%60);
+		var min = Math.floor(((tmp/1000)/60)%60);
 
 		return(String(min) + " : " + String(sec) + " : " + String(msec));
 	}
 
 }
-
-
-function test(texte){
-	time = new Timer();
-	var tTime = document.getElementById(texte);
-
-	time.start();
-	setTimeout(function() {lambda(tTime, time)}, 1000);
-}
-
-function lambda(tTime, time){
-	time.add(5000);
-	alert(time.getDraw());
-	tTime.textContent = time.getDraw();
-	time.stop();
-	tTime.textContent = time.getDraw();
-}
-
-
-
-
-
-
-
-
