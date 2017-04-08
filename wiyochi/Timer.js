@@ -22,7 +22,7 @@ class Timer {
 
 	getTime(){
 		if (this.run) {
-			this.time += this.date.getTime();
+			this.time = this.date.getTime()-this.time;
 			return(this.time);
 		}
 		else {
