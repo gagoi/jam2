@@ -8,7 +8,7 @@ Sketch
 				x
 				y
 			textureName
-			applyGravity()
+			velocity
 		Chapter
 			Level
 			Texture
