@@ -19,29 +19,13 @@ function loadLevel(lvl){
 	var height = occurrences(map, "\n", false) + 1;
 	var width = map.search("\n") + 1;
 
-	print("dim:",height, width);
-
-	map = map.replace("\n", "");
-	map = map.replace(" ", "");
-
 	level = new Array(width);
 	for(var x = 0; x < width; x++) {
 		level[x] = new Array(height);
 		for(var y = 0; y < height; y++) {
-			print(y * width + x - 1);
-			level[x][y] =  map.charAt(y * width + x - 1);
-			print(level[x][y]);
+			level[x][y] =  map.charAt(y * (width + 1) + x);
 		}
 	}
-
-	/////////////////TEST//////////////////
-
-	for(var x = 0; x < level.length; x++) {
-		for(var y = 0; y < level[x].length; y++) {
-			text(level[x][y], x * 10, y * 17);
-		}
-	}
-	/////////////////TEST//////////////////
 
 }
 
