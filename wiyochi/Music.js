@@ -26,7 +26,7 @@ class Music{
 	playMusic(){
 		var rand;
 		do {
-			rand = Math.random() * this.arrayMusic.length();
+			rand = Math.floor(Math.random() * this.nbMusic);
 		} while(rand==this.random);
 		this.random = rand;
 		this.arrayMusic[this.random].play();
