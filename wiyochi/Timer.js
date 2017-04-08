@@ -4,10 +4,9 @@ class Timer {
     }
 
     reset(){
-		this.date = new Date()
-        this.time = this.date.getTime();
 		this.run = false;
 		this.currentTime = 0;
+		this.timeMax = 0;
     }
 
     start(){
@@ -26,10 +25,10 @@ class Timer {
 		this.date = new Date();
 		if (this.run) {
 			var tmp = this.date.getTime()-this.time;
-			return(tmp);
+			return(this.timeMax-tmp);
 		}
 		else {
-			return(this.currentTime);
+			return(this.timeMax-this.currentTime);
 		}
 	}
 
@@ -37,8 +36,17 @@ class Timer {
 		this.time -= addTime;
 	}
 
+	setTimeMax(timeMax){
+		this.timeMax = timeMax;
+	}
+
 	getDraw(){
 		var tmp = this.getTime();
+		var negative = false;
+		if (tmp<0){
+			tmp = -tmp;
+			negative = true;
+		}
 		var msec = Math.floor((tmp%1000)/10);
 		var sec = Math.floor((tmp/1000)%60);
 		var min = Math.floor(((tmp/1000)/60)%60);
@@ -62,7 +70,12 @@ class Timer {
 			min = String(min)
 		}
 
-		return(min + " : " + sec + " : " + msec);
+		if (negative){
+			return("- " + min + " : " + sec + " : " + msec);
+		}
+		else{
+			return(min + " : " + sec + " : " + msec);
+		}
 	}
 
 }
