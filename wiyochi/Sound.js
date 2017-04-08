@@ -1,11 +1,11 @@
 class Sound{
 	constructor(){
 		this.nbSound = 1;
-		this.path = "resources/sounds/";
+		this.path = "resources/chapters/0/";
 		this.pathArray = new Array();
 
 		for (var i=0; i<this.nbSound; i++){
-			this.pathArray.push(path + "lvl_" + String(i) + ".mp3");
+			this.pathArray.push(this.path + "lvl_" + String(i) + ".mp3");
 		}
 
 		this.soundArray = new Array();

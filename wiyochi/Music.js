@@ -12,13 +12,9 @@ class Music{
 	}
 
 	load(){
-		color(255, 0, 0);
-		text("TEST", 50, 50);
-		/*
 		for(var i=0; i<(this.nbMusic); i++){
 			this.arrayMusic.push(loadSound(this.arrayPath[i]));
 		}
-		*/
 	}
 
 	volume(newVolume){
@@ -28,7 +24,6 @@ class Music{
 	}
 
 	playMusic(){
-		alert("test");
 		var rand;
 		do {
 			rand = Math.random() * this.arrayMusic.length();
@@ -38,22 +33,14 @@ class Music{
 	}
 
 	play(){
-		if (!isPlaying()){
-			playMusic();
+		var isArrayMusicPlaying = false;
+		for (var i=0; i<this.nbMusic; i++){
+			if (this.arrayMusic[i].isPlaying()){
+				isArrayMusicPlaying = true;
+			}
+		}
+		if (!isArrayMusicPlaying){
+			this.playMusic();
 		}
 	}
 }
-
-
-
-
-/*
-function preload() {
-  mySound = loadSound('assets/doorbell.mp3');
-}
-
-function setup() {
-  mySound.setVolume(0.1);
-  mySound.play();
-}
-*/
