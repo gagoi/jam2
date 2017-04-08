@@ -1,6 +1,7 @@
 var level = [[]];
 var xBegin, yBegin;
 var xEnd, yEnd;
+var height, width;
 
 function loadLevel(chap, lvl){
 	var levelText, rawFile = new XMLHttpRequest();
@@ -16,8 +17,8 @@ function loadLevel(chap, lvl){
 	var map = levelText.replace(/[^]*:[^\n]*\n/, "");
 	var param = levelText.replace(map, "");
 
-	var height = occurrences(map, "\n", false) + 1;
-	var width = map.search("\n") + 1;
+	height = occurrences(map, "\n", false);
+	width = map.search("\n");
 
 	level = new Array(width);
 	for(var x = 0; x < width; x++) {
@@ -27,6 +28,40 @@ function loadLevel(chap, lvl){
 		}
 	}
 
+}
+
+function getHeight(){
+	return height;
+}
+
+function getWidth(){
+	return width;
+}
+
+function getxBegin() {
+	return xBegin;
+}
+function getyBegin() {
+	return yBegin;
+}
+function getxEnd() {
+	return xEnd;
+}
+function getyEnd() {
+	return yEnd;
+}
+
+function setxBegin(val) {
+	xBegin = val;
+}
+function setyBegin(val) {
+	yBegin = val;
+}
+function setxEnd(val) {
+	xEnd = val;
+}
+function setyEnd(val) {
+	yEnd = val;
 }
 
 function occurrences(string, subString, allowOverlapping) {

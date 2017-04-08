@@ -9,7 +9,6 @@ class Player extends Entity{
 		this.currentPos = 0;
 	}
 
-
 	initPos(x, y) {
 		this.xPos = x;
 		this.yPos = y;
