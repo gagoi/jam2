@@ -10,6 +10,9 @@ class Entity {
 		this.xPos = 0;
 		this.yPos = 0;
 
+		this.width = 0;
+		this.height = 0;
+
 		this.applyGravity = false;
 	}
 
@@ -39,6 +42,13 @@ class Entity {
 		this.yPos = val;
 	}
 
+	setWidth(val){
+		this.width = val;
+	}
+	setHeight(val){
+		this.height = val;
+	}
+
 	getxAcc(){
 		return(this.xAcc);
 	}
@@ -56,5 +66,12 @@ class Entity {
 	}
 	getyPos(){
 		return(this.yPos);
+	}
+
+	getWidth(){
+		return this.width;
+	}
+	getHeight(){
+		return this.height;
 	}
 }
