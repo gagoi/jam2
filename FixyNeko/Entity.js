@@ -12,4 +12,49 @@ class Entity {
 
 		this.applyGravity = false;
 	}
+
+	void update() {
+		this.xVel += this.xAcc;
+		this.yVel += this.yAcc;
+		this.xPos += this.xVel;
+		this.yPos += this.yVel;
+	}
+
+	void setxAcc(val){
+		this.xAcc = val;
+	}
+	void setyAcc(val){
+		this.yAcc = val;
+	}
+	void setxVel(val){
+		this.xVel = val;
+	}
+	void setyVel(val){
+		this.yVel = val;
+	}
+	void setxPos(val){
+		this.xPos = val;
+	}
+	void setyPos(val){
+		this.yPos = val;
+	}
+
+	float getxAcc(){
+		return(this.xAcc);
+	}
+	float getyAcc(){
+		return(this.yAcc);
+	}
+	float getxVel(){
+		return(this.xVel);
+	}
+	float getyVel(){
+		return(this.yVel);
+	}
+	float getxPos(){
+		return(this.xPos);
+	}
+	float getyPos(){
+		return(this.yPos);
+	}
 }
