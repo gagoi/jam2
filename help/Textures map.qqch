@@ -6,7 +6,7 @@ D --> wood : false
 E --> leaves : false
 F -->
 G -->
-H -->
+H --> 
 I -->
 J -->
 K -->
@@ -26,3 +26,5 @@ X -->
 Y -->
 Z -->
 
+:item=<ladder, x, y>
+:item=<door, x, y, network, [in(0), out(1)], [red(0), blue(1), purple(2)]>
