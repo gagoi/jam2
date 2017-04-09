@@ -1,6 +1,7 @@
 class Entity {
 	constructor(texturePath){
-		this.textureName = texturePath.replace(/[^\/]*$/, "");
+		//this.textureName = texturePath.replace(/[^\/]*$/, "");
+		this.textureName = 'D';
 		this.path = texturePath.replace(this.textureName, "");
 
 		this.xVel = 0;
@@ -21,6 +22,10 @@ class Entity {
 		this.yVel += this.yAcc;
 		this.xPos += this.xVel;
 		this.yPos += this.yVel;
+	}
+
+	render(textureLoader) {
+		image(textureLoader.getImage(this.textureName), this.xPos, this.yPos);
 	}
 
 	setxAcc(val){
@@ -69,9 +74,9 @@ class Entity {
 	}
 
 	getWidth(){
-		return this.width;
+		return(this.width);
 	}
 	getHeight(){
-		return this.height;
+		return(this.height);
 	}
 }
