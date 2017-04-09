@@ -3,11 +3,13 @@ var run = true;
 var music = new Music("resources/sounds/musics/", 3);
 var sound = new Sound("resources/chapters/");
 var menu = new Menu();
+var textureLoader = new TextureLoader();
 var typeMenu = "mainMenu";
 
 function preload(){
 	music.load();
 	sound.load();
+	textureLoader.load();
 }
 
 function setup() {
@@ -34,6 +36,7 @@ function draw() {
 		player.setyVel(-30);
 
 	text(timer.getDraw(), 20, 20);
+	image(textureLoader.getImage('A'),0,0);
 }
 
 function mousePressed() {
