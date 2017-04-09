@@ -5,8 +5,8 @@ C --> grass : true
 D --> wood : false
 E --> leaves : false
 F -->
-G -->
-H --> 
+G --> end : false
+H --> spades : false
 I -->
 J -->
 K -->
@@ -26,5 +26,6 @@ X -->
 Y -->
 Z -->
 
-:item=<ladder, x, y>
+:item=<ladder, x, y, t>
 :item=<door, x, y, network, [in(0), out(1)], [red(0), blue(1), purple(2)]>
+:item=<swap, x, y>
