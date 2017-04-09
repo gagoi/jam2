@@ -16,7 +16,7 @@ function preload(){
 
 function setup() {
 	print("setup");
-	createCanvas(2000, 1000);
+	createCanvas(1000, 700);
 	timer = new Timer();
 	timer.start();
 	timer.setTimeMax(180000);
@@ -33,6 +33,31 @@ function mousePressed() {
 	run = !run;
 	run ? timer.start() : timer.stop();
 	menu.mouse(mouseX, mouseY);
+}
+
+function keyPressed() {
+	switch(keyCode){
+		case UP_ARROW:
+			game.player.setyVel(-15);
+			break;
+		case LEFT_ARROW:
+			game.player.setxVel(game.player.getxVel() - 5);
+			break;
+		case RIGHT_ARROW:
+			game.player.setxVel(game.player.getxVel() + 5);
+			break;
+	}
+}
+
+function keyReleased() {
+	switch(keyCode){
+		case LEFT_ARROW:
+			game.player.setxVel(game.player.getxVel() + 5);
+			break;
+		case RIGHT_ARROW:
+			game.player.setxVel(game.player.getxVel() - 5);
+			break;
+	}
 }
 
 function selectLevel(chapter, level){

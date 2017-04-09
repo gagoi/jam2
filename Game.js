@@ -46,7 +46,7 @@ class Game{
 				this.player.setxPos(casePos[0] * 32);
 				this.player.setxVel(0);
 			}
-		if(casePos[0] >= this.chapter.getMapWidth() - 1 && isHard(this.chapter.getCaseId(casePos[0] + 1, casePos[1]))) //has a (hard) block on right of it
+		if(casePos[0] < this.chapter.getMapWidth() - 1 && isHard(this.chapter.getCaseId(casePos[0] + 1, casePos[1]))) //has a (hard) block on right of it
 			if(collideRectRect((casePos[0] + 1) * 32, casePos[1] * 32, 32, 32, this.player.getxPos(), this.player.getyPos(), this.player.getWidth(), this.player.getHeight())){
 				this.player.setxPos((casePos[0] + 1) * 32 - this.player.getWidth());
 				this.player.setxVel(0);
