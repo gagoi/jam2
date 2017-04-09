@@ -3,7 +3,7 @@ class Game{
 	constructor(){
 		this.updateList = [];
 		this.playerw = 32;
-		this.playerh = 32;
+		this.playerh = 64;
 		var ghostNum = 0;
 
 		this.chapter = new Chapter();
