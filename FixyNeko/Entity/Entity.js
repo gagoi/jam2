@@ -10,8 +10,8 @@ class Entity {
 		this.xPos = 0;
 		this.yPos = 0;
 
-		this.width = 0;
-		this.height = 0;
+		this.width = 32;
+		this.height = 32;
 
 		this.applyGravity = false;
 	}
