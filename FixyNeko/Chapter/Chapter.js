@@ -31,12 +31,12 @@ class Chapter{
 
 		//Parameters parse
 
-		this.xBegin = parseInt(param.match(/in_x=\d*/).match(/\d*/));
-		this.yBegin = parseInt(param.match(/in_y=\d*/).match(/\d*/));
-		this.xEnd = parseInt(param.match(/out_x=\d*/).match(/\d*/));
-		this.yEnd = parseInt(param.match(/out_y=\d*/).match(/\d*/));
+//		this.xBegin = parseInt(param.match(/in_x=\d*/).match(/\d*/));
+//		this.yBegin = parseInt(param.match(/in_y=\d*/).match(/\d*/));
+//		this.xEnd = parseInt(param.match(/out_x=\d*/).match(/\d*/));
+//		this.yEnd = parseInt(param.match(/out_y=\d*/).match(/\d*/));
 
-		var item ;
+//		var item ;
 
 	}
 
