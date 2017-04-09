@@ -9,7 +9,7 @@ class Game{
 		this.chapter = new Chapter();
 
 		//chargement textures
-		this.playerTexture = "resources/textures/blocks/";
+		this.playerTexture = "resources/textures/player/";
 		this.player = new Player(this.playerTexture, ghostNum);
 		this.player.setxPos(this.chapter.getxBegin());
 		this.player.setyPos(this.chapter.getyBegin());

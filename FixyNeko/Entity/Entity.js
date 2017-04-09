@@ -2,7 +2,11 @@ class Entity {
 	constructor(texturePath){
 		//this.textureName = texturePath.replace(/[^\/]*$/, "");
 		this.textureName = 'D';
+		this.animTimer = 0;
 		this.path = texturePath.replace(this.textureName, "");
+
+		if(this.path == "resources/textures/player/")
+		   this.textureName = "right_0";
 
 		this.xVel = 0;
 		this.yVel = 0;
@@ -25,8 +29,23 @@ class Entity {
 	}
 
 	render(textureLoader) {
-		image(textureLoader.getImage(this.textureName), this.xPos, this.yPos);
+		this.anim();
+		image(textureLoader.getImageByName(this.textureName), this.xPos, this.yPos);
 	}
+
+	anim(){
+		if (this.path == "resources/textures/player/") {
+			if(this.xVel != 0){
+				this.animTimer++;
+				this.animTimer = this.animTimer % 30;
+				if (this.xVel > 0)
+					this.textureName = "right_" + String(Math.trunc(this.animTimer/10));
+				else if (this.xVel < 0)
+					this.textureName = "left_" + String(Math.trunc(this.animTimer/10));
+			}
+		}
+	}
+
 
 	setxAcc(val){
 		this.xAcc = val;
