@@ -1,7 +1,9 @@
 var timer;
 var run = true;
 var music = new Music("resources/sounds/musics/", 3);
-var sound = new Sound("resources/chapters/0/");
+var sound = new Sound("resources/chapters/");
+var menu = new Menu();
+var typeMenu = "mainMenu";
 
 function preload(){
 	music.load();
@@ -21,10 +23,9 @@ function setup() {
 
 function draw() {
 	clear();
-	music.volume(0.4);
+	changeMenu();
+	music.volume(0.0);
 	music.play();
-	sound.volume(0.7);
-	sound.play(0);
 	//background(253, 108, 158);
 	//rect(player.getxPos(), player.getyPos(), 100, 100);
 	if(run)
@@ -38,5 +39,24 @@ function draw() {
 function mousePressed() {
 	run = !run;
 	run ? timer.start() : timer.stop();
-	print(run);
+	menu.mouse(mouseX, mouseY);
+}
+
+function selectLevel(chapter, level){
+	sound.volume(1);
+	sound.play(chapter, level);
+}
+
+function changeMenu(){
+	if (typeMenu == "mainMenu"){
+		menu.render();
+	}
+	else if (typeMenu == "changingMenu"){
+		delete menu;
+		menu = new LevelMenu();
+		typeMenu = "levelMenu";
+	}
+	else {
+		menu.render();
+	}
 }
