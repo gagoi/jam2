@@ -1,18 +1,21 @@
-var textureLoader, game;
-
 function setup() {
-	createCanvas(2000, 1000);
+	var txt = ":item=<ladder, x, y, t>:item=<door, x, y, network, [in(0), out(1)], [red(0), blue(1), purple(2)]>:item=<swap, x, y>"
 
-	game = new Game();
+	var items = [];
+	items = txt.match(/:item=<[a-z0-9, ]*>/);
+	for(var i = 0; i < items.length; i++){
+		print(items[i]);
+		items[i] = items[i].match(/<[a-z0-9, ]*>/)[0];
+		print(items[i]);
+		items[i] = items[i].match(/[a-z0-9, ]*/);
+	}
 
-	textureLoader = new TextureLoader();
-	textureLoader.load();
-
-	game.init();
-
+	var params = new Array(items.length);
+	for(var i = 0; i < items.length; i++){
+		params[i] = items[i].match(/ ?[a-z\d]*,?/).match(/[^ ,]/);
+	}
+	print(params);
 }
 
 function draw() {
-	game.update();
-	game.render(textureLoader);
 }
