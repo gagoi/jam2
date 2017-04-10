@@ -5,14 +5,14 @@ class TextureLoader{
 	}
 
 	getImage(code){
-		if(this.textureMap.get(this.charMap.getCode(code)) != "undifined")
+		if(this.textureMap.get(this.charMap.getCode(code)) != undefined)
 			return this.textureMap.get(this.charMap.get(code));
 		else
 			return this.textureMap.get("sky");
 	}
 
 	getImageByName(name){
-		if(this.textureMap.get(name) != "undifined")
+		if(this.textureMap.get(name) != undefined)
 			return this.textureMap.get(name);
 		else
 			return this.textureMap.get("sky");
