@@ -16,7 +16,7 @@ function preload(){
 
 function setup() {
 	print("setup");
-	createCanvas(1000, 700);
+	createCanvas(1024, 576);
 	timer = new Timer();
 	timer.start();
 	timer.setTimeMax(180000);
@@ -63,6 +63,7 @@ function keyReleased() {
 function selectLevel(chapter, level){
 	sound.volume(1);
 	sound.play(chapter, level);
+	game.selectLevel(chapter, level);
 }
 
 function changeMenu(){
