@@ -22,7 +22,7 @@ class Game{
 		this.player.setHeight(this.playerh);
 		this.updateList[this.updateList.length] = this.player;
 
-		this.selectLevel(0,9);
+		this.selectLevel(0,0);
 	}
 
 	update() {
